@@ -172,15 +172,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p>
-<ol>
-<li>全是静态文件，访问速度快；</li>
-<li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
-<li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/12/29/my-first-blog/#more">more >></a>
-        
+        <h1 id="Vue移动端框架Mint-UI教程——搭建环境引入框架（一）"><a href="#Vue移动端框架Mint-UI教程——搭建环境引入框架（一）" class="headerlink" title="Vue移动端框架Mint UI教程——搭建环境引入框架（一）"></a>Vue移动端框架Mint UI教程——搭建环境引入框架（一）</h1><p>Mint UI是饿了么团队开发的基于vue.js的移动端UI框架，它包含丰富的CSS和JS组件，能够满足日常的移动端开发需要。</p>
+<ul>
+<li>官网: <a href="https://mint-ui.github.io/#!/zh-cn" target="_blank" rel="noopener">https://mint-ui.github.io/#!/zh-cn</a></li>
+<li>Github: <a href="https://github.com/ElemeFE/mint-ui/" target="_blank" rel="noopener">https://github.com/ElemeFE/mint-ui/</a></li>
+</ul>
+<h2 id="1-安装node"><a href="#1-安装node" class="headerlink" title="1: 安装node"></a>1: 安装node</h2><p>前端开发框架和环境都是需要node.js的，下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+<h2 id="2-查看node的版本号"><a href="#2-查看node的版本号" class="headerlink" title="2: 查看node的版本号"></a>2: 查看node的版本号</h2><p>安装之后打开cmd，输入node -v后回车，出现版本号则说明安装成功。</p>
+<h2 id="3-安装淘宝npm镜像"><a href="#3-安装淘宝npm镜像" class="headerlink" title="3: 安装淘宝npm镜像"></a>3: 安装淘宝npm镜像</h2><p>由于npm是国外的，使用起来比较慢，我们可以使用淘宝的cnpm镜像，淘宝的cnpm命令管理工具可以代替默认的npm管理工具。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令: npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-全局安装vue-cli脚手架"><a href="#4-全局安装vue-cli脚手架" class="headerlink" title="4: 全局安装vue-cli脚手架"></a>4: 全局安装vue-cli脚手架</h2><p>输入命令: cnpm install –global vue-cli回车。验证是否安装成功：在cmd中输入vue后回车，显示vue的信息说明安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令: cnpm install --global vue-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-开始进入主题，初始化一个vue项目"><a href="#5-开始进入主题，初始化一个vue项目" class="headerlink" title="5: 开始进入主题，初始化一个vue项目"></a>5: 开始进入主题，初始化一个vue项目</h2><p>打开命令行工具cmd，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+<p>通过Vue项目管理器来创建一个vue项目。</p>
+<h2 id="6-安装mint-ui依赖"><a href="#6-安装mint-ui依赖" class="headerlink" title="6: 安装mint-ui依赖"></a>6: 安装mint-ui依赖</h2><p>依赖-&gt;安装依赖-&gt;运行依赖-&gt;查找插件：输入 mint-ui</p>
+<h2 id="7-在项目中的main-js文件中引入mint-ui的所有组件"><a href="#7-在项目中的main-js文件中引入mint-ui的所有组件" class="headerlink" title="7: 在项目中的main.js文件中引入mint-ui的所有组件"></a>7: 在项目中的main.js文件中引入mint-ui的所有组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Mint from &#39;mint-ui&#39;</span><br><span class="line">import &#39;mint-ui&#x2F;lib&#x2F;style.css&#39;</span><br><span class="line">Vue.use(Mint)</span><br></pre></td></tr></table></figure>
       
 
       
