@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://yws710.github.io">
   <title>SpringBoot 配置和使用logback | yws710的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="springboot 如果不使用外部tomcat的话，日志是需要自己配置的，不然的话就只有控制台的日志，但是日志又是我们在项目上了生产环境，出问题时，检查问题的唯一途径，所以我们要配置详细的日志。 1.在application.properties文件中配置logging.level.*来具体输出哪些包的日志级别。123logging.level.root&#x3D;INFOlogging.lev">
+  <meta name="description" content="springboot 如果不使用外部tomcat的话，日志是需要自己配置的，不然的话就只有控制台的日志，但是日志又是我们在项目上了生产环境，出问题时，检查问题的唯一途径，所以我们要配置详细的日志。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot 配置和使用logback">
 <meta property="og:url" content="https://yws710.github.io/2019/12/29/logback/index.html">
 <meta property="og:site_name" content="yws710的个人博客">
-<meta property="og:description" content="springboot 如果不使用外部tomcat的话，日志是需要自己配置的，不然的话就只有控制台的日志，但是日志又是我们在项目上了生产环境，出问题时，检查问题的唯一途径，所以我们要配置详细的日志。 1.在application.properties文件中配置logging.level.*来具体输出哪些包的日志级别。123logging.level.root&#x3D;INFOlogging.lev">
+<meta property="og:description" content="springboot 如果不使用外部tomcat的话，日志是需要自己配置的，不然的话就只有控制台的日志，但是日志又是我们在项目上了生产环境，出问题时，检查问题的唯一途径，所以我们要配置详细的日志。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-29T14:04:49.000Z">
-<meta property="article:modified_time" content="2019-12-29T14:13:57.166Z">
+<meta property="article:modified_time" content="2019-12-29T14:15:09.347Z">
 <meta property="article:author" content="yws710">
 <meta name="twitter:card" content="summary">
   
@@ -169,6 +169,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>springboot 如果不使用外部tomcat的话，日志是需要自己配置的，不然的话就只有控制台的日志，但是日志又是我们在项目上了生产环境，出问题时，检查问题的唯一途径，所以我们要配置详细的日志。</p>
+<a id="more"></a>
+
 <h2 id="1-在application-properties文件中配置logging-level-来具体输出哪些包的日志级别。"><a href="#1-在application-properties文件中配置logging-level-来具体输出哪些包的日志级别。" class="headerlink" title="1.在application.properties文件中配置logging.level.*来具体输出哪些包的日志级别。"></a>1.在application.properties文件中配置logging.level.*来具体输出哪些包的日志级别。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">logging.level.root&#x3D;INFO</span><br><span class="line">logging.level.org.springframework.web&#x3D;DEBUG</span><br><span class="line">logging.level.org.hibernate&#x3D;ERROR</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-日志级别：TRACE-lt-DEBUG-lt-INFO-lt-WARN-lt-ERROR"><a href="#2-日志级别：TRACE-lt-DEBUG-lt-INFO-lt-WARN-lt-ERROR" class="headerlink" title="2.日志级别：TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR"></a>2.日志级别：TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR</h2><h2 id="3-文件名使用logback-spring-xml，不要使用logback-xml"><a href="#3-文件名使用logback-spring-xml，不要使用logback-xml" class="headerlink" title="3.文件名使用logback-spring.xml，不要使用logback.xml"></a>3.文件名使用logback-spring.xml，不要使用logback.xml</h2><p>因为logback.xml加载早于application.properties，如果在logback.xml中使用了变量，而这个变量正好定义在application.properties中，那么就会获取不到。</p>
