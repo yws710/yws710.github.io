@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws710.github.io">
-  <title>SpringBoot 使用EasyPoi导出Excel，单元格文字带超链接。 | yws710的个人博客</title>
+  <title>Java SE 01 Java概述 | yws710的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用EasyPoi导出带超链接的Excel文件。">
+  <meta name="description" content="Java语言发展史Java语言跨平台原理JRE和JDKJDK的下载和安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot 使用EasyPoi导出Excel，单元格文字带超链接。">
-<meta property="og:url" content="https://yws710.github.io/2020/01/05/easypoi-Hyperlink/index.html">
+<meta property="og:title" content="Java SE 01 Java概述">
+<meta property="og:url" content="https://yws710.github.io/2020/04/08/JavaSE_01/index.html">
 <meta property="og:site_name" content="yws710的个人博客">
-<meta property="og:description" content="使用EasyPoi导出带超链接的Excel文件。">
+<meta property="og:description" content="Java语言发展史Java语言跨平台原理JRE和JDKJDK的下载和安装">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yws710.github.io/img/poi_color.png">
-<meta property="article:published_time" content="2020-01-05T02:11:28.000Z">
-<meta property="article:modified_time" content="2020-01-10T11:17:30.018Z">
+<meta property="og:image" content="https://yws710.github.io/img/JavaSE/Java%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://yws710.github.io/img/JavaSE/jdk.png">
+<meta property="article:published_time" content="2020-04-08T14:50:28.000Z">
+<meta property="article:modified_time" content="2020-04-08T15:20:01.533Z">
 <meta property="article:author" content="yws710">
-<meta property="article:tag" content="EasyPoi">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yws710.github.io/img/poi_color.png">
+<meta name="twitter:image" content="https://yws710.github.io/img/JavaSE/Java%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -152,37 +152,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-easypoi-Hyperlink" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaSE_01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot 使用EasyPoi导出Excel，单元格文字带超链接。
+      Java SE 01 Java概述
     </h1>
   
 
         
-        <a href="/2020/01/05/easypoi-Hyperlink/" class="archive-article-date">
-  	<time datetime="2020-01-05T02:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+        <a href="/2020/04/08/JavaSE_01/" class="archive-article-date">
+  	<time datetime="2020-04-08T14:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用<code>EasyPoi</code>导出带超链接的<code>Excel</code>文件。</p>
+        <p>Java语言发展史<br>Java语言跨平台原理<br>JRE和JDK<br>JDK的下载和安装</p>
 <a id="more"></a>
 
-<h2 id="1-创建实体类"><a href="#1-创建实体类" class="headerlink" title="1.创建实体类"></a>1.创建实体类</h2><p>在需要设置超链接的属性上设置<code>isHyperlink = true</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.afterturn.easypoi.excel.annotation.Excel;</span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"><span class="keyword">import</span> lombok.Setter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HyperLinkEntity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Excel</span>(name = <span class="string">"名称"</span>, isHyperlink = <span class="keyword">true</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Excel</span>(name = <span class="string">"URL"</span>, width = <span class="number">25</span>)</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-在controller方法中导出Excel文件"><a href="#2-在controller方法中导出Excel文件" class="headerlink" title="2.在controller方法中导出Excel文件"></a>2.在controller方法中导出Excel文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/hyperLink"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hyperLink</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	List&lt;HyperLinkEntity&gt; list = <span class="keyword">this</span>.getData();</span><br><span class="line">	ExportParams params = <span class="keyword">new</span> ExportParams(<span class="string">"标题"</span>, <span class="string">"测试"</span>, ExcelType.HSSF);</span><br><span class="line">	<span class="comment">//params.setStyle(HyperlinkStyler.class); // 设置自定义样式</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 在处理数据时设置超链接</span></span><br><span class="line">	params.setDataHandler(<span class="keyword">new</span> ExcelDataHandlerDefaultImpl&lt;Object&gt;() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> Hyperlink <span class="title">getHyperlink</span><span class="params">(CreationHelper creationHelper, Object obj, String name, Object value)</span> </span>&#123;</span><br><span class="line">			Hyperlink link = creationHelper.createHyperlink(HyperlinkType.URL);</span><br><span class="line">			HyperLinkEntity e = (HyperLinkEntity) obj;</span><br><span class="line">			link.setAddress(e.getUrl());</span><br><span class="line">			link.setLabel(e.getName());</span><br><span class="line">			<span class="keyword">return</span> link;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	Workbook workbook = ExcelExportUtil.exportExcel(params, HyperLinkEntity<span class="class">.<span class="keyword">class</span>, <span class="title">list</span>)</span>;</span><br><span class="line">	response.setHeader(<span class="string">"content-Type"</span>,<span class="string">"application/vnd.ms-excel"</span>);</span><br><span class="line">	response.setHeader(<span class="string">"Content-Disposition"</span>,<span class="string">"attachment;filename="</span>+System.currentTimeMillis()+<span class="string">".xls"</span>);</span><br><span class="line">	response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		workbook.write(response.getOutputStream());</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">		workbook.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="附：设置超链接的样式"><a href="#附：设置超链接的样式" class="headerlink" title="附：设置超链接的样式"></a>附：设置超链接的样式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.CellStyle;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.Font;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.HorizontalAlignment;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.VerticalAlignment;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.ss.usermodel.Workbook;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity;</span><br><span class="line"><span class="keyword">import</span> cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerDefaultImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HyperlinkStyler</span> <span class="keyword">extends</span> <span class="title">ExcelExportStylerDefaultImpl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> CellStyle hyperlinkCellStyle;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HyperlinkStyler</span><span class="params">(Workbook workbook)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(workbook);</span><br><span class="line">        createHyperlinkCellStyler();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createHyperlinkCellStyler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	hyperlinkCellStyle = workbook.createCellStyle();</span><br><span class="line">    	Font font = workbook.createFont();</span><br><span class="line">    	<span class="keyword">short</span> color = <span class="number">30</span>;</span><br><span class="line">    	font.setColor(color); <span class="comment">// 设置字体颜色</span></span><br><span class="line">    	font.setUnderline(Font.U_SINGLE); <span class="comment">// 下划线</span></span><br><span class="line">    	hyperlinkCellStyle.setFont(font);</span><br><span class="line">    	</span><br><span class="line">    	hyperlinkCellStyle.setAlignment(HorizontalAlignment.CENTER); <span class="comment">// 设置水平对齐方式</span></span><br><span class="line">    	hyperlinkCellStyle.setVerticalAlignment(VerticalAlignment.CENTER); <span class="comment">// 设置垂直对齐方式</span></span><br><span class="line"><span class="comment">//    	hyperlinkCellStyle.setWrapText(true); // 设置自动换行</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CellStyle <span class="title">getStyles</span><span class="params">(<span class="keyword">boolean</span> noneStyler, ExcelExportEntity entity)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span> (entity != <span class="keyword">null</span> &amp;&amp; entity.isHyperlink()) &#123; <span class="comment">// 如果是超链接</span></span><br><span class="line">    		<span class="keyword">return</span> hyperlinkCellStyle;</span><br><span class="line">    	&#125;</span><br><span class="line">		</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getStyles(noneStyler, entity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://gitee.com/lemur/easypoi?_from=gitee_search" target="_blank" rel="noopener">easypoi</a></p>
-<h2 id="常用颜色列表"><a href="#常用颜色列表" class="headerlink" title="常用颜色列表"></a>常用颜色列表</h2><p><img src="/img/poi_color.png" alt="avatar"></p>
+<h2 id="Java语言发展史"><a href="#Java语言发展史" class="headerlink" title="Java语言发展史"></a>Java语言发展史</h2><ul>
+<li>1995年Java语言诞生</li>
+<li>1996年Java1.0</li>
+<li>1997年Java1.1</li>
+<li>1998年Java1.2</li>
+<li>2000年Java1.3</li>
+<li>2002年Java1.4</li>
+<li><strong><font color=red>2004年Java5.0    发生了特别大的改变</font></strong></li>
+<li>2006年Java6.0</li>
+<li>2009年Oracle公司收购Sun公司</li>
+<li>2011年Java7.0</li>
+<li><strong><font color=red>2014年Java8.0    重大更新，目前公司中最常用的版本</font></strong></li>
+<li>2017年Java9.0</li>
+<li>2018年3月Java10</li>
+<li>2018年9月Java11</li>
+<li>2019年3月Java12</li>
+<li>2019年9月Java13</li>
+</ul>
+<h2 id="Java语言跨平台原理"><a href="#Java语言跨平台原理" class="headerlink" title="Java语言跨平台原理"></a>Java语言跨平台原理</h2><h3 id="平台"><a href="#平台" class="headerlink" title="平台"></a>平台</h3><p>指的是操作系统，例如：</p>
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>Linux</li>
+</ul>
+<h3 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h3><p>指的是Java程序可以在任意操作系统上运行。</p>
+<h3 id="跨平台原理"><a href="#跨平台原理" class="headerlink" title="跨平台原理"></a>跨平台原理</h3><p><strong>在</strong>需要运行Java程序的<strong>操作系统上</strong>，<strong>安装</strong>一个与操作系统对应的<strong>Java虚拟机</strong>（JVM Java Virtual Machine）即可。<br><img src="/img/JavaSE/Java%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86.png" alt="avatar"></p>
+<h2 id="JRE和JDK"><a href="#JRE和JDK" class="headerlink" title="JRE和JDK"></a>JRE和JDK</h2><h3 id="JRE-Java-Runtime-Environment"><a href="#JRE-Java-Runtime-Environment" class="headerlink" title="JRE(Java Runtime Environment)"></a>JRE(<font color=red>J</font>ava <font color=red>R</font>untime <font color=red>E</font>nvironment)</h3><p>是Java程序的运行时环境，包含<font color=red>JVM</font>和运行时所需的核心类库。<br>我们想要<font color=red>运行</font>一个已有的Java程序，那么只需要安装<font color=red>JRE</font>即可。</p>
+<h3 id="JDK-Java-Development-Kit"><a href="#JDK-Java-Development-Kit" class="headerlink" title="JDK(Java Development Kit)"></a>JDK(<font color=red>J</font>ava <font color=red>D</font>evelopment <font color=red>K</font>it)</h3><p>是Java程序开发工具包，<font color=red>包含JRE</font>和开发人员使用的工具。<br>其中的开发工具：编译工具（<font color=red>javac.exe</font>）和运行工具（<font color=red>java.exe</font>）。<br>我们想要<font color=red>开发</font>一个全新的Java程序，那么必须安装<font color=red>JDK</font>。</p>
+<h3 id="JDK、JRE和JVM的关系"><a href="#JDK、JRE和JVM的关系" class="headerlink" title="JDK、JRE和JVM的关系"></a>JDK、JRE和JVM的关系</h3><p><img src="/img/JavaSE/jdk.png" alt="avatar"></p>
+<h2 id="JDK的下载和安装"><a href="#JDK的下载和安装" class="headerlink" title="JDK的下载和安装"></a>JDK的下载和安装</h2><h3 id="JDK的下载"><a href="#JDK的下载" class="headerlink" title="JDK的下载"></a>JDK的下载</h3><p>通过官方网站获取JDK<br>Oracle JDK: <a href="https://www.oracle.com/cn/java/technologies/javase-downloads.html" target="_blank">https://www.oracle.com/cn/java/technologies/javase-downloads.html</a><br>OpenJDK: <a href="http://jdk.java.net/14/" target="_blank">http://jdk.java.net/14/</a><br>注意：针对不同操作系统，下载对应的JDK。  </p>
+<h3 id="JDK的安装"><a href="#JDK的安装" class="headerlink" title="JDK的安装"></a>JDK的安装</h3><p>傻瓜式安装，下一步即可。<br><font color=red>建议：安装路径中不要有中文和空格。</font></p>
+<h3 id="JDK的安装目录"><a href="#JDK的安装目录" class="headerlink" title="JDK的安装目录"></a>JDK的安装目录</h3><table>
+<thead>
+<tr>
+<th>目录名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bin</td>
+<td>该路径下存放了JDK的各种工具命令。javac和java就放在这个目录。</td>
+</tr>
+<tr>
+<td>conf</td>
+<td>该路径下存放了JDK的相关配置文件。</td>
+</tr>
+<tr>
+<td>include</td>
+<td>该路径下存放了一些平台特定的头文件。</td>
+</tr>
+<tr>
+<td>jmods</td>
+<td>该路径下存放了JDK的各种模块。</td>
+</tr>
+<tr>
+<td>legal</td>
+<td>该路径下存放了JDK各模块的授权文档。</td>
+</tr>
+<tr>
+<td>lib</td>
+<td>该路径下存放了JDK工具的一些补充JAR包。</td>
+</tr>
+</tbody></table>
+<p>其余文件为说明性文档。</p>
 
       
 
@@ -227,10 +283,6 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">EasyPoi</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
@@ -243,7 +295,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/SpringBoot//" class="article-tag-list-link color1">SpringBoot</a>
+        			<a href="/categories/JavaSE//" class="article-tag-list-link color2">JavaSE</a>
         		</li>
       		
 		</ul>
@@ -298,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://api.qrserver.com/v1/create-qr-code/?data=https://yws710.github.io/2020/01/05/easypoi-Hyperlink/" alt="微信分享二维码">
+      <img src="http://api.qrserver.com/v1/create-qr-code/?data=https://yws710.github.io/2020/04/08/JavaSE_01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +364,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/07/locker/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/08/JavaSE_02/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SpringBoot 使用mybatis-plus 配置乐观锁。
+          第一个程序
         
       </div>
     </a>
   
   
-    <a href="/2019/12/29/logback/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringBoot 配置和使用logback</div>
+    <a href="/2020/01/08/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown基本语法</div>
       <i class="icon-circle-right"></i>
     </a>
   
