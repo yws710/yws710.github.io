@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws710.github.io">
-  <title>Java SE 02 第一个程序 | yws710的个人博客</title>
+  <title>Java SE 02 Java数据类型 | yws710的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用DOS命令 path环境变量的配置 HelloWorld案例 HelloWorld案例常见问题 Notepad++软件的安装和使用">
+  <meta name="description" content="数据类型 类型转换 总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java SE 02 第一个程序">
+<meta property="og:title" content="Java SE 02 Java数据类型">
 <meta property="og:url" content="https://yws710.github.io/2020/04/08/JavaSE_02/index.html">
 <meta property="og:site_name" content="yws710的个人博客">
-<meta property="og:description" content="常用DOS命令 path环境变量的配置 HelloWorld案例 HelloWorld案例常见问题 Notepad++软件的安装和使用">
+<meta property="og:description" content="数据类型 类型转换 总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yws710.github.io/img/JavaSE/Java%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png">
-<meta property="article:published_time" content="2020-04-08T15:13:28.000Z">
-<meta property="article:modified_time" content="2020-04-08T15:41:38.351Z">
+<meta property="og:image" content="https://yws710.github.io/img/JavaSE/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="https://yws710.github.io/img/JavaSE/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png">
+<meta property="article:published_time" content="2020-04-08T13:35:28.000Z">
+<meta property="article:modified_time" content="2020-04-11T04:06:26.693Z">
 <meta property="article:author" content="yws710">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yws710.github.io/img/JavaSE/Java%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png">
+<meta name="twitter:image" content="https://yws710.github.io/img/JavaSE/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -158,13 +159,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java SE 02 第一个程序
+      Java SE 02 Java数据类型
     </h1>
   
 
         
         <a href="/2020/04/08/JavaSE_02/" class="archive-article-date">
-  	<time datetime="2020-04-08T15:13:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+  	<time datetime="2020-04-08T13:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
 </a>
         
       </header>
@@ -172,83 +173,106 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>常用DOS命令</li>
-<li>path环境变量的配置</li>
-<li>HelloWorld案例</li>
-<li>HelloWorld案例常见问题</li>
-<li>Notepad++软件的安装和使用</li>
+<li>数据类型</li>
+<li>类型转换</li>
+<li>总结</li>
 </ol>
 <a id="more"></a>
 
-<h2 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h2><h3 id="打开命令提示符窗口"><a href="#打开命令提示符窗口" class="headerlink" title="打开命令提示符窗口"></a>打开命令提示符窗口</h3><ol>
-<li>按下win + R  </li>
-<li>输入cmd  </li>
-<li>按下回车键  </li>
-</ol>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="计算机的存储单元"><a href="#计算机的存储单元" class="headerlink" title="计算机的存储单元"></a>计算机的存储单元</h3><p>无论是内存还是硬盘，计算机存储设备的最小单元叫<font color=red>位（bit）</font>，也称之为<font color=red>比特位</font>，通常用小写的字母<font color=red>b</font>表示。<br>而计算机中最小的存储单元叫<font color=red>字节（byte）</font>，通常用大写字母<font color=red>B</font>表示，字节是由连续的8个比特位组成。</p>
+<h3 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h3><p>Java语言是强类型语言，对于每一种数据都给出了明确的数据类型，不同的数据类型也分配了不同的内存空间。所以它们表示的数据大小也是不一样的。<br>Java语言支持的数据类型分为两类：基本类型（Primitive Type）和引用类型（Reference Type）。<br><img src="/img/JavaSE/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" alt="avatar"></p>
+<h3 id="基本数据类型内存占用和取值范围"><a href="#基本数据类型内存占用和取值范围" class="headerlink" title="基本数据类型内存占用和取值范围"></a>基本数据类型内存占用和取值范围</h3><table>
 <thead>
 <tr>
-<th>操作</th>
-<th>说明</th>
+<th>数据类型</th>
+<th>关键字</th>
+<th>内存占用</th>
+<th>取值范围</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>盘符名称:</td>
-<td>盘符切换。D:回车，切换到D盘。</td>
+<td>字节型</td>
+<td>byte</td>
+<td>1个字节</td>
+<td>-128(-2⁷) ~ 127(2⁷-1)</td>
 </tr>
 <tr>
-<td>dir</td>
-<td>查看当前路径下的内容。</td>
+<td>短整型</td>
+<td>short</td>
+<td>2个字节</td>
+<td>-32768(-2¹⁵) ~ 32767(2¹⁵-1)</td>
 </tr>
 <tr>
-<td>cd 目录</td>
-<td>进入该目录。</td>
+<td>整型</td>
+<td><font color=red>int</font></td>
+<td>4个字节</td>
+<td>-2147483648(-2³¹) ~ 2147483647(2³¹-1)</td>
 </tr>
 <tr>
-<td>cd ..</td>
-<td>返回到上级目录。cd ../.. 返回到上上级目录</td>
+<td>长整型</td>
+<td>long</td>
+<td>8个字节</td>
+<td>-2⁶³ ~ 2⁶³-1</td>
 </tr>
 <tr>
-<td>cd 目录1/目录2</td>
-<td>进入多级目录。cd ide/workspace</td>
+<td>单精度</td>
+<td>float</td>
+<td>4个字节</td>
+<td>只能保证小数点后6位是精确的</td>
 </tr>
 <tr>
-<td>cd /</td>
-<td>返回到根目录。</td>
+<td>双精度</td>
+<td><font color=red>double</font></td>
+<td>8个字节</td>
+<td>能保证小数点后15位是精确的</td>
 </tr>
 <tr>
-<td>cls</td>
-<td>清屏。</td>
+<td>字符型</td>
+<td>char</td>
+<td>2个字节</td>
+<td>0 ~ 65535</td>
 </tr>
 <tr>
-<td>exit</td>
-<td>退出命令提示符窗口。</td>
+<td>布尔型</td>
+<td>boolean</td>
+<td>1个字节或4个字节</td>
+<td>true, false</td>
 </tr>
 </tbody></table>
-<h2 id="path环境变量的配置"><a href="#path环境变量的配置" class="headerlink" title="path环境变量的配置"></a>path环境变量的配置</h2><h3 id="为什么要配置path环境变量"><a href="#为什么要配置path环境变量" class="headerlink" title="为什么要配置path环境变量"></a>为什么要配置path环境变量</h3><p>开发Java程序，需要使用JDK提供的开发工具，而这些工具在JDK的安装目录的bin目录下。<br>为了在开发Java程序的时候，能够方便的使用<font color=red>javac</font>和<font color=red>java</font>命令，我们需要配置<font color=red>path环境变量</font>。  </p>
-<h3 id="如何配置path环境变量"><a href="#如何配置path环境变量" class="headerlink" title="如何配置path环境变量"></a>如何配置path环境变量</h3><p>桌面——&gt;右键单击“此电脑”——&gt;点击“属性(R)”——&gt;选择“高级系统设置”——&gt;点击“环境变量(N)…”<br>在“系统变量(S)”下点击“新建(W)…”，变量名输入JAVA_HOME，变量值输入JDK的安装路径，例如C:\Program Files\Java\jdk-14<br>配置path变量：在“系统变量(S)”下找到“Path”变量，选中并点击“编辑(I)…”，然后点击“新建(N)”，输入%JAVA_HOME%\bin；然后再次点击“新建(N)”，输入%JAVA_HOME%\jre\bin<br>在cmd中输入<font color=red>java -verbose</font>可以查看jdk的安装路径。如果已经配置了path环境变量，则输入set JAVA_HOME就能看到配置路径。  </p>
-<h2 id="HelloWorld案例"><a href="#HelloWorld案例" class="headerlink" title="HelloWorld案例"></a>HelloWorld案例</h2><h3 id="Java程序开发运行流程"><a href="#Java程序开发运行流程" class="headerlink" title="Java程序开发运行流程"></a>Java程序开发运行流程</h3><p>开发Java程序，需要三个步骤：<font color=red>编写程序、编译程序、运行程序</font>。<br><img src="/img/JavaSE/Java%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="avatar"></p>
-<h3 id="HelloWorld案例的编写"><a href="#HelloWorld案例的编写" class="headerlink" title="HelloWorld案例的编写"></a>HelloWorld案例的编写</h3><ul>
-<li>新建文本文件，修改名称为HelloWorld.java</li>
-<li>用记事本打开HelloWorld.java文件，书写程序内容：  </li>
+<p>说明：</p>
+<ul>
+<li>E+38表示10的38次方，同样，E-45表示10的负45次方；</li>
+<li>整数默认是int类型；</li>
+<li>浮点数默认是double类型；</li>
+<li>对Java虚拟机来说根本就不存在boolean这个类型，boolean类型在编译后会使用其他数据类型来表示，通常是int，boolean数组会被编译成byte数组。</li>
 </ul>
-<pre><code class="Java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        System.out.println(<span class="string">"Hello World!"</span>);
-    }
-}</code></pre>
-<h3 id="HelloWorld案例的编译和运行"><a href="#HelloWorld案例的编译和运行" class="headerlink" title="HelloWorld案例的编译和运行"></a>HelloWorld案例的编译和运行</h3><p>打开命令提示符窗口，进入到HelloWorld.java文件所在的目录，输入指令编译和执行。<br>编译：javac 文件名.java<br>范例：javac HelloWorld.java  </p>
-<p>执行：java 类名<br>范例：java HelloWorld  </p>
-<h2 id="HelloWorld案例常见问题"><a href="#HelloWorld案例常见问题" class="headerlink" title="HelloWorld案例常见问题"></a>HelloWorld案例常见问题</h2><h3 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h3><ul>
-<li>要具备识别BUG的能力：多看；</li>
-<li>要具备分析BUG的能力：多思考，多查阅资料；</li>
-<li>要具备解决BUG的能力：多尝试，多总结。</li>
+<h3 id="整数值的表示方式"><a href="#整数值的表示方式" class="headerlink" title="整数值的表示方式"></a>整数值的表示方式</h3><p>Java中整数值有4种表示方式：二进制、八进制、十进制、十六进制。  </p>
+<ul>
+<li>二进制的整数以<font color=red>0b</font>或<font color=red>0B</font>开头；示例：int i = 0B0011（实际上是32位的，这里简写了。）</li>
+<li>八进制的整数以<font color=red>0</font>开头；示例：int j = 013</li>
+<li>十六进制的整数以<font color=red>0x</font>或<font color=red>0X</font>开头。示例：int k = 0x1af</li>
 </ul>
-<h3 id="中英文符号问题"><a href="#中英文符号问题" class="headerlink" title="中英文符号问题"></a>中英文符号问题</h3><p>使用英文符号</p>
-<h3 id="单词拼写问题"><a href="#单词拼写问题" class="headerlink" title="单词拼写问题"></a>单词拼写问题</h3><p>区分大小写</p>
-<h2 id="Notepad-软件的安装和使用"><a href="#Notepad-软件的安装和使用" class="headerlink" title="Notepad++软件的安装和使用"></a>Notepad++软件的安装和使用</h2><h3 id="为什么要使用Notepad-软件"><a href="#为什么要使用Notepad-软件" class="headerlink" title="为什么要使用Notepad++软件"></a>为什么要使用Notepad++软件</h3><p>Windows自带的记事本不能显示行号。  </p>
-<h3 id="Notepad-软件的安装"><a href="#Notepad-软件的安装" class="headerlink" title="Notepad++软件的安装"></a>Notepad++软件的安装</h3><p>傻瓜式安装。</p>
-<h3 id="Notepad-软件的使用"><a href="#Notepad-软件的使用" class="headerlink" title="Notepad++软件的使用"></a>Notepad++软件的使用</h3><p>使用：通过Notepad++软件编写HelloWorld案例。</p>
+<p>所有数值在计算机底层都是以二进制形式存在的，原码是直接将一个数值转换成二进制数，但计算机是以补码的形式保存所有的整数。</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>把一个表数范围小的数值或变量赋值给另一个表数范围大的变量。<br>范例1：double d = 10;<br>范例2：byte b = 10; short s = b;<br><img src="/img/JavaSE/%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png" alt="avatar"><br>说明：boolean类型不是数值类型，是不能参与到类型转换的。</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>把一个表数范围大的数值或变量赋值给另一个表数范围小的变量。<br>格式：目标数据类型 变量名 = (目标数据类型)值或者变量;<br>范例：int i = (int)88.88;<br>强制类型转换可能会导致数据的丢失，一般不建议使用。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="关于浮点数"><a href="#关于浮点数" class="headerlink" title="关于浮点数"></a>关于浮点数</h3><ol>
+<li>浮点数的表数范围要比long大得多，因此long型数据可自动转换成float；</li>
+<li>float能确保6位小数是精确的；</li>
+<li>double能确保15位小数是精确的。  </li>
+</ol>
+<h3 id="特殊的浮点数"><a href="#特殊的浮点数" class="headerlink" title="特殊的浮点数"></a>特殊的浮点数</h3><p>Java提供了三个特殊的浮点数：正无穷大(Infinity)、负无穷大(-Infinity)、非数(NaN)。</p>
+<ul>
+<li>有一个操作数为浮点数时，除数可以为0或0.0（整数可以除以0.0）；</li>
+<li>正数除以0得到正无穷大，负数除以0得到负无穷大；</li>
+<li>0.0除以0得到非数，对一个负数开方得到非数；</li>
+<li>整数除以0会报编译异常 /by zero</li>
+<li>所有正无穷大值都是相等的；</li>
+<li>所有负无穷大值都是相等的；</li>
+<li>NaN不与任何值相等，包括NaN。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d1 = <span class="number">12.0</span> / <span class="number">0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="keyword">double</span> d2 = <span class="number">12</span> / <span class="number">0.0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="keyword">double</span> d3 = -<span class="number">12.0</span> / <span class="number">0</span>; <span class="comment">// -Infinity</span></span><br><span class="line"><span class="keyword">double</span> d4 = <span class="number">12</span> / -<span class="number">0.0</span>; <span class="comment">// -Infinity</span></span><br><span class="line"><span class="keyword">double</span> d5 = <span class="number">0.0</span> / <span class="number">0</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">double</span> d6 = <span class="number">0</span> / <span class="number">0.0</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">double</span> d7 = Math.sqrt(-<span class="number">4</span>); <span class="comment">// NaN</span></span><br><span class="line">System.out.println(Float.POSITIVE_INFINITY == Double.POSITIVE_INFINITY); <span class="comment">// true</span></span><br><span class="line">System.out.println(Float.NEGATIVE_INFINITY == Double.NEGATIVE_INFINITY); <span class="comment">// true</span></span><br><span class="line">System.out.println(Float.NaN == Float.NaN); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="表达式类型的自动提升"><a href="#表达式类型的自动提升" class="headerlink" title="表达式类型的自动提升"></a>表达式类型的自动提升</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s = <span class="number">5</span>;</span><br><span class="line">s = s + <span class="number">2</span>; <span class="comment">// 编译报错。s是short类型，2是int类型，因此s+2会自动提升为int类型，将一个int类型值赋给short变量将会报错。</span></span><br><span class="line">s += <span class="number">2</span>; <span class="comment">// 不会报错，隐含了一个强制类型转换，将int型的2强转为short类型。推荐使用这种方式，但是要确保不会溢出。</span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"Hello!"</span> + <span class="string">'a'</span> + <span class="number">7</span>); <span class="comment">// Hello!a7</span></span><br><span class="line">System.out.println(<span class="string">'a'</span> + <span class="number">7</span> + <span class="string">"Hello!"</span>); <span class="comment">// 104Hello!</span></span><br><span class="line"><span class="comment">// 前者先计算"Hello!" + 'a'，加号做为字符串连接运算符，得到一个字符串 Hello!a</span></span><br><span class="line"><span class="comment">// 后者先计算'a' + 7，char型的'a'自动提升为int型。</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -374,18 +398,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/08/JavaSE_03/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/09/JavaSE_03/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java SE 03 基础语法
+          Java SE 03 运算符
         
       </div>
     </a>
   
   
     <a href="/2020/04/08/JavaSE_01/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java SE 01 Java概述</div>
+      <div class="article-nav-title">Java SE 01 第一个程序</div>
       <i class="icon-circle-right"></i>
     </a>
   
